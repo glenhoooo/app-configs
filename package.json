@@ -1,0 +1,22 @@
+{
+  "name": "app-configs",
+  "version": "1.0.0",
+  "description": "configs",
+  "main": "index.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "build": "cross-env HOST='https://app-configs.199100.xyz' node build.js",
+    "build:gh": "cross-env HOST='http://app-configs-gh.199100.xyz' node build.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "nodejs-file-downloader": "^4.12.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

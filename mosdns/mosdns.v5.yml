@@ -1,0 +1,165 @@
+# mosdns v5
+# https://github.com/IrineSistiana/mosdns/discussions/624
+log:
+  level: info
+  production: true
+
+# 启动 api 方便清除缓存. `curl localhost:35353` 查看帮助
+api:
+  http: "0.0.0.0:35353"
+
+plugins:
+  - tag: "direct_domain"
+    # 载入域名供其他插件使用
+    type: domain_set
+    args:
+      files:
+        - "./accelerated-domains.china.txt"
+
+  - tag: "direct_ip"
+    # 载入 IP 表供其他插件使用
+    type: ip_set
+    args:
+      # 从文本文件载入
+      files:
+        # cidr：对IP地址进行聚合和分配
+        - "./CN-ip-cidr.txt"
+
+  - tag: "private_company_domain"
+    # 载入域名供其他插件使用
+    type: domain_set
+    args:
+      # 域名表达式
+      # 域名匹配规则： https://irine-sistiana.gitbook.io/mosdns-wiki/mosdns-v5/ru-he-pei-zhi-mosdns/yu-ming-pi-pei-gui-ze
+      exps:
+        # 以 domain: 开头，域匹配：匹配自身及子域
+        - "domain:alibaba.com"
+        - "domain:cisdi.com.cn"
+        - "domain:cisdigital.cn"
+
+  - tag: "hosts"
+    type: hosts
+    args:
+      files:
+        - "./hosts.txt"
+
+  - tag: "cache"
+    type: cache
+    args:
+      size: 65536
+      # lazy cache，也叫乐观缓存
+      # 所有应答都会在缓存中存留 lazy_cache_ttl 秒
+      lazy_cache_ttl: 86400
+      dump_file: ./cache.dump
+
+  - tag: "remote_forward"
+    # 转发请求至上游服务器。获取应答后放入请求
+    type: forward
+    args:
+      concurrent: 3
+      upstreams:
+        - addr: https://qhk.199100.xyz/d
+        - addr: https://qhk.199100.xyz/f
+        - addr: https://94.140.14.140/dns-query
+        # - addr: "https://8.8.4.4/dns-query"
+        #   socks5: "127.0.0.1:7890"
+        #   idle_timeout: 86400
+
+  - tag: "local_forward"
+    type: forward
+    args:
+      concurrent: 2
+      upstreams:
+        - addr: "https://223.5.5.5/dns-query"
+          idle_timeout: 86400
+        - addr: "https://120.53.53.53/dns-query"
+          idle_timeout: 86400
+
+  - tag: "company_forward"
+    type: forward
+    args:
+      concurrent: 1
+      upstreams:
+        - addr: udp://10.73.1.1
+
+  - tag: "ttl_sequence"
+    # sequence 是一个 可执行插件 ，可以被其他插件调用
+    type: sequence
+    args:
+      # ttl: 修改应答的 TTL
+      - exec: ttl 600-3600
+      # 内建跳转操作:停止后续规则执行
+      - exec: accept
+
+  - tag: "local_sequence"
+    # sequence 是一个 可执行插件 ，可以被其他插件调用
+    type: sequence
+    args:
+      # query_summary: 以 info 级别在 log 打印请求的摘要。参数: query_summary [ msg_title ]
+      - exec: query_summary local_forward
+      - exec: $local_forward
+      - exec: goto ttl_sequence
+
+  - tag: "remote_sequence"
+    # sequence 是一个 可执行插件 ，可以被其他插件调用
+    type: sequence
+    args:
+      - exec: query_summary remote_forward
+      - exec: $remote_forward
+      # 如果返回的 IP 是国内 IP
+      - matches: "resp_ip $direct_ip"
+        exec: goto local_sequence
+      - exec: goto ttl_sequence
+
+  - tag: "company_sequence"
+    # sequence 是一个 可执行插件 ，可以被其他插件调用
+    type: sequence
+    args:
+      # query_summary: 以 info 级别在 log 打印请求的摘要。参数: query_summary [ msg_title ]
+      - exec: query_summary company_forward
+      - exec: $company_forward
+      - exec: goto ttl_sequence
+
+  - tag: "final"
+    type: fallback
+    args:
+      # 如果 primary 抛出错误，或返回但没有应答，或在 threshold 毫秒内无响应
+      # 则执行 secondary
+      primary: remote_sequence
+      secondary: local_sequence
+      # 无响应回滚阈值。单位毫秒
+      threshold: 500
+      # secondary 和 primary 一并执行。secondary 的结果将会在需要回滚时，立刻被采用。
+      always_standby: false
+
+  - tag: "main_sequence"
+    type: sequence
+    args:
+      # 让下游客户端支持双栈时优先使用 IPv4
+      - exec: prefer_ipv4
+      - exec: $hosts
+      # 排除动态域名读取cache
+      - matches: "!qname home.199100.xyz"
+        exec: $cache
+      # 如果有应答，返回 true
+      - matches: has_resp
+        # 内建跳转操作:停止后续规则执行
+        exec: accept
+      # qname: 内建匹配器，语法：`qname { domain_rule | $domain_set_tag | &domain_list_file } ...`
+      # 匹配公司域名(仅在公司内网环境使用)
+      # - matches: "qname $private_company_domain"
+      #   exec: goto company_sequence
+      # qname: 内建匹配器。匹配国内直连域名
+      # 解释这段：匹配 direct_domain 就走 local_sequence
+      - matches: "qname $direct_domain"
+        exec: goto local_sequence
+      # 执行 tag:final 插件
+      - exec: $final
+
+  - tag: udp_server
+    # 服务器插件接收来自客户端的请求，转交给可执行插件处理。
+    # 可执行插件生成应答对应的请求。服务器插件将应答返回客户端。
+    type: udp_server
+    args:
+      entry: main_sequence
+      listen: :53

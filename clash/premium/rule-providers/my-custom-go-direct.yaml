@@ -1,0 +1,38 @@
+payload:
+  - DOMAIN-KEYWORD,cisdi
+  - DOMAIN-KEYWORD,cisdigital
+  - DOMAIN-KEYWORD,china-yongfeng
+  - DOMAIN-KEYWORD,qingtui
+  - DOMAIN-KEYWORD,poseidon
+  - DOMAIN-KEYWORD,qbee
+  - DOMAIN-KEYWORD,bilibili
+  - DOMAIN-SUFFIX,bing.com
+  - DOMAIN-SUFFIX,ss.com
+  - DOMAIN-SUFFIX,chaoxing.com
+  - DOMAIN-SUFFIX,lanhuapp.com
+  - DOMAIN-SUFFIX,163.com
+  - DOMAIN-SUFFIX,taobao.com
+  - DOMAIN-SUFFIX,jd.com
+  - DOMAIN-SUFFIX,dicmusic.club
+  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,douban.com
+  - DOMAIN-SUFFIX,home.199100.xyz
+  - DOMAIN-SUFFIX,api.cloudflare.com
+  - DOMAIN-SUFFIX,api.github.com
+  - DOMAIN-SUFFIX,coalcloud.net
+  - DOMAIN-SUFFIX,inkisp.com
+  - DOMAIN-SUFFIX,xun-niu.com
+  - DOMAIN-SUFFIX,hi-api.now.sh
+  - DOMAIN-SUFFIX,mb3admin.com
+  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,music.163.com
+  - DOMAIN-SUFFIX,music.126.net
+  - DOMAIN-SUFFIX,cdn.digitaloceanspaces.com
+  # Check IP
+  - DOMAIN-SUFFIX,checkip.amazonaws.com
+  - DOMAIN-SUFFIX,myexternalip.com
+  # CISDI IP
+  - IP-CIDR,10.73.0.0/16,no-resolve
+  - IP-CIDR,192.160.0.0/16,no-resolve
+  - IP-CIDR,192.168.0.0/16,no-resolve
+  - IP-CIDR,5.5.5.0/24,no-resolve

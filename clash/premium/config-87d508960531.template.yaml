@@ -1,0 +1,375 @@
+#####################
+#port: 7890
+#socks-port: 7891
+
+# Transparent proxy server port for Linux and macOS (Redirect TCP and TProxy UDP)
+# redir-port: 7892
+
+# Transparent proxy server port for Linux (TProxy TCP and TProxy UDP)
+# tproxy-port: 7893
+
+# (HTTP and SOCKS5 in one port)
+mixed-port: 7890
+# RESTful API for clash
+external-controller: 0.0.0.0:9090
+allow-lan: true
+
+# This is only applicable when `allow-lan` is `true`
+# '*': bind all IP addresses
+# 192.168.122.11: bind a single IPv4 address
+# "[aaaa::a8aa:ff:fe09:57d8]": bind a single IPv6 address
+bind-address: "*"
+
+mode: rule
+log-level: info
+
+# When set to false, resolver won't translate hostnames to IPv6 addresses
+ipv6: false
+
+# Static hosts for DNS server and connection establishment (like /etc/hosts)
+#
+# Wildcard hostnames are supported (e.g. *.clash.dev, *.foo.*.example.com)
+# Non-wildcard domain names have a higher priority than wildcard domain names
+# e.g. foo.example.com > *.example.com > .example.com
+# P.S. +.foo.com equals to .foo.com and foo.com
+hosts:
+  "*.clash.dev": 127.0.0.1
+
+cfw-bypass:
+  - qq.com
+  - taobao.com
+  - music.163.com
+  - "*.music.126.net"
+  - localhost
+  - 127.*
+  - 10.*
+  - 172.16.*
+  - 172.17.*
+  - 172.18.*
+  - 172.19.*
+  - 172.20.*
+  - 172.21.*
+  - 172.22.*
+  - 172.23.*
+  - 172.24.*
+  - 172.25.*
+  - 172.26.*
+  - 172.27.*
+  - 172.28.*
+  - 172.29.*
+  - 172.30.*
+  - 172.31.*
+  - 192.168.*
+  - <local>
+
+# DNS server settings
+# This section is optional. When not present, the DNS server will be disabled.
+dns:
+  enable: false
+  # listen: 0.0.0.0:53
+  listen: 0.0.0.0:5353
+  ipv6: false # when the false, response to AAAA questions will be empty
+
+  # These nameservers are used to resolve the DNS nameserver hostnames below.
+  # Specify IP addresses only
+  default-nameserver:
+    - 119.29.29.29
+    - 1.0.0.1
+  enhanced-mode: fake-ip # or fake-ip
+  fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
+  # use-hosts: true # lookup hosts and return IP record
+
+  # Hostnames in this list will not be resolved with fake IPs
+  # i.e. questions to these domain names will always be answered with their
+  # real IP addresses
+  fake-ip-filter:
+    - "*.lan"
+    - localhost.ptlogin2.qq.com
+    - "+.srv.nintendo.net"
+    - "+.stun.playstation.net"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "+.xboxlive.com"
+    - "msftconnecttest.com"
+    - "xbox.*.microsoft.com"
+
+  # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
+  # All DNS questions are sent directly to the nameserver, without proxies
+  # involved. Clash answers the DNS question with the first result gathered.
+  nameserver:
+    - 119.29.29.29
+    - tls://dns.rubyfish.cn:853 # DNS over TLS
+    - https://1.1.1.1/dns-query # DNS over HTTPS
+
+  # When `fallback` is present, the DNS server will send concurrent requests
+  # to the servers in this section along with servers in `nameservers`.
+  # The answers from fallback servers are used when the GEOIP country
+  # is not `CN`.
+  # fallback:
+  #   - tcp://1.1.1.1
+
+  # If IP addresses resolved with servers in `nameservers` are in the specified
+  # subnets below, they are considered invalid and results from `fallback`
+  # servers are used instead.
+  #
+  # IP address resolved with servers in `nameserver` is used when
+  # `fallback-filter.geoip` is true and when GEOIP of the IP address is `CN`.
+  #
+  # If `fallback-filter.geoip` is false, results from `nameserver` nameservers
+  # are always used if not match `fallback-filter.ipcidr`.
+  #
+  # This is a countermeasure against DNS pollution attacks.
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      # - 240.0.0.0/4
+    # domain:
+    #   - '+.google.com'
+    #   - '+.facebook.com'
+    #   - '+.youtube.com'
+
+#
+# https://github.com/Dreamacro/clash/wiki/premium-core-features
+#
+# tun:
+#   enable: true
+#   stack: system # or gvisor
+#   # dns-hijack:
+#   #   - 8.8.8.8:53
+#   #   - tcp://8.8.8.8:53
+#   macOS-auto-route: true # auto set global route
+#   macOS-auto-detect-interface: true # conflict with interface-name
+
+proxies:
+  - { name: "ss", server: 127.0.0.1, port: 1080, type: socks5 }
+
+proxy-providers:
+  # J20:
+  #   type: http
+  #   # url: "https://subcon.dlj.tf/sub?target=clash&url=https%3A%2F%2Fj20cloud.com%2Flink%2FiirrDoVhB4W9j9VB%3Fsub%3D3%26extend%3D1&emoji=true&list=true&sort=false&udp=false&tfo=false&scv=false&append_type=false&fdn=true&new_name=true" # 放机场订阅链接
+  #   url: "https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https%3A%2F%2Fj20cloud.com%2Flink%2FiirrDoVhB4W9j9VB%3Fsub%3D3%26extend%3D1&insert=false&emoji=true&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
+  #   interval: 3600
+  #   path: ./Proxy/J20.yaml # 注意此处文件名不可相同
+  #   health-check:
+  #     enable: true
+  #     interval: 600
+  #     url: http://www.gstatic.com/generate_204
+
+  my-build-cf:
+    type: http
+    url: "$$HOST$$/clash/premium/proxy-providers/cf-0242ac130002.yaml"
+    interval: 3600
+    path: ./Proxy/my-build-cf.yaml # 注意此处文件名不可相同
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  my-build-org:
+    type: http
+    url: "$$HOST$$/clash/premium/proxy-providers/my-0242ac130002.yaml"
+    interval: 3600
+    path: ./Proxy/my-build-org.yaml # 注意此处文件名不可相同
+    health-check:
+      enable: false
+      interval: 1200
+      url: http://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: "Hello"
+    type: select
+    use:
+      - my-build-cf
+      - my-build-org
+    proxies:
+      - DIRECT
+
+  - name: "Netflix"
+    type: select
+    use:
+      - my-build-cf
+      - my-build-org
+
+  - name: "Spotify"
+    type: select
+    use:
+      - my-build-cf
+      - my-build-org
+
+  # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
+  - name: "漏网之鱼"
+    type: select
+    proxies:
+      - Hello
+      - DIRECT
+
+rule-providers:
+  # =================== https://github.com/Loyalsoldier/clash-rules
+  reject:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/reject.yaml"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  icloud:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/icloud.yaml"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/apple.yaml"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/proxy.yaml"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/direct.yaml"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+  private:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/private.yaml"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
+  gfw:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/gfw.yaml"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+
+  greatfire:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/greatfire.yaml"
+    path: ./ruleset/greatfire.yaml
+    interval: 86400
+
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/tld-not-cn.yaml"
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+
+  # telegramcidr:
+  #   type: http
+  #   behavior: ipcidr
+  #   url: "$$HOST$$/clash/premium/rule-providers/third-party/telegramcidr.yaml"
+  #   path: ./ruleset/telegramcidr.yaml
+  #   interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/cncidr.yaml"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/lancidr.yaml"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+  applications:
+    type: http
+    behavior: classical
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/applications.yaml"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+
+  #=======================
+
+  netflix:
+    type: http
+    behavior: classical
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/Netflix.yaml"
+    path: ./ruleset/netflix.yaml
+    interval: 86400
+
+  google:
+    type: http
+    behavior: classical
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/Google.yaml"
+    path: ./ruleset/google.yaml
+    interval: 86400
+
+  microsoft:
+    type: http
+    behavior: classical
+    url: "$$HOST$$/clash/premium/rule-providers/third-party/Microsoft.yaml"
+    path: ./ruleset/microsoft.yaml
+    interval: 86400
+
+  # my custom
+  my-direct:
+    type: http
+    behavior: classical
+    url: "$$HOST$$/clash/premium/rule-providers/my-custom-go-direct.yaml"
+    path: ./ruleset/my-direct.yaml
+    interval: 86400
+
+  my-proxy:
+    type: http
+    behavior: classical
+    url: "$$HOST$$/clash/premium/rule-providers/my-custom-go-proxy.yaml"
+    path: ./ruleset/my-proxy.yaml
+    interval: 86400
+
+  my-proxy-nf:
+    type: http
+    behavior: classical
+    url: "$$HOST$$/clash/premium/rule-providers/my-custom-go-netflix.yaml"
+    path: ./ruleset/my-proxy-nf.yaml
+    interval: 86400
+
+  my-proxy-spotify:
+    type: http
+    behavior: classical
+    url: "$$HOST$$/clash/premium/rule-providers/my-custom-go-spotify.yaml"
+    path: ./ruleset/my-proxy-spotify.yaml
+    interval: 86400
+
+# https://github.com/Loyalsoldier/clash-rules#%E7%99%BD%E5%90%8D%E5%8D%95%E6%A8%A1%E5%BC%8F-rules-%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F%E6%8E%A8%E8%8D%90
+rules:
+  - RULE-SET,my-proxy,Hello
+  - RULE-SET,netflix,Netflix
+  - RULE-SET,my-proxy-nf,Netflix
+  - RULE-SET,my-proxy-spotify,Spotify
+  - RULE-SET,my-direct,DIRECT
+  - RULE-SET,google,Hello
+  - RULE-SET,microsoft,Hello
+  - RULE-SET,proxy,Hello
+  # - RULE-SET,telegramcidr,Hello
+  - RULE-SET,applications,DIRECT
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  # 如你不希望进行 DNS 解析，可在 GEOIP 规则的最后加上 ,no-resolve，如 GEOIP,CN,DIRECT,no-resolve。
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,漏网之鱼

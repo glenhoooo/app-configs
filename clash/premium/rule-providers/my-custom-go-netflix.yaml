@@ -1,0 +1,4 @@
+payload:
+  # Proxy with netflix
+  # OpenAI forbid HK proxy
+  - DOMAIN-SUFFIX,custom-domain-go-nf.com,NETFLIX

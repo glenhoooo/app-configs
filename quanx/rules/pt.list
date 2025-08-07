@@ -1,0 +1,117 @@
+# 自定义走代理的HOST
+HOST-SUFFIX,v3.cm,PT_Site
+HOST-SUFFIX,nodeloc.com,PT_Site
+HOST-SUFFIX,hostloc.com,PT_Site
+HOST-SUFFIX,nodeseek.com,PT_Site
+DOMAIN,chat.199100.xyz,PT_Site
+
+# Private Tracker
+# HOST-SUFFIX,beitai.pt,PT_Site
+# HOST-SUFFIX,beyond-hd.me,PT_Site
+# HOST-SUFFIX,bibliotik.me,PT_Site
+# HOST-SUFFIX,bittorrent.com,PT_Site
+# HOST-SUFFIX,blutopia.xyz,PT_Site
+# HOST-SUFFIX,broadcasthe.net,PT_Site
+# HOST-SUFFIX,bt.byr.cn,PT_Site
+# HOST-SUFFIX,bt.neu6.edu.cn,PT_Site
+# HOST-SUFFIX,btschool.club,PT_Site
+# HOST-SUFFIX,bwtorrents.tv,PT_Site
+# HOST-SUFFIX,byr.pt,PT_Site
+# HOST-SUFFIX,ccfbits.org,PT_Site
+# HOST-SUFFIX,cgpeers.com,PT_Site
+# HOST-SUFFIX,chdbits.co,PT_Site
+# HOST-SUFFIX,cinemageddon.net,PT_Site
+# HOST-SUFFIX,cinematik.net,PT_Site
+# HOST-SUFFIX,cinemaz.to,PT_Site
+# HOST-SUFFIX,classix-unlimited.co.uk,PT_Site
+# HOST-SUFFIX,concertos.live,PT_Site
+HOST-SUFFIX,dicmusic.com,PT_Site
+# HOST-SUFFIX,discfan.net,PT_Site
+# HOST-SUFFIX,dxdhd.com,PT_Site
+# HOST-SUFFIX,eastgame.org,PT_Site
+# HOST-SUFFIX,empornium.me,PT_Site
+# HOST-SUFFIX,et8.org,PT_Site
+# HOST-SUFFIX,exoticaz.to,PT_Site
+# HOST-SUFFIX,extremlymtorrents.ws,PT_Site
+# HOST-SUFFIX,filelist.io,PT_Site
+# HOST-SUFFIX,gainbound.net,PT_Site
+# HOST-SUFFIX,gazellegames.net,PT_Site
+# HOST-SUFFIX,gfxpeers.net,PT_Site
+# HOST-SUFFIX,hd-space.org,PT_Site
+# HOST-SUFFIX,hd-torrents.org,PT_Site
+# HOST-SUFFIX,hd4.xyz,PT_Site
+# HOST-SUFFIX,hd4fans.org,PT_Site
+HOST-SUFFIX,hdarea.co,PT_Site
+HOST-SUFFIX,hdatmos.club,PT_Site
+# HOST-SUFFIX,hdbd.us,PT_Site
+# HOST-SUFFIX,hdbits.org,PT_Site
+# HOST-SUFFIX,hdchina.org,PT_Site
+# HOST-SUFFIX,hdcity.city,PT_Site
+# HOST-SUFFIX,hddolby.com,PT_Site
+HOST-SUFFIX,hdfans.org,PT_Site
+HOST-SUFFIX,hdhome.org,PT_Site
+# HOST-SUFFIX,hdpost.top,PT_Site
+# HOST-SUFFIX,hdroute.org,PT_Site
+# HOST-SUFFIX,hdsky.me,PT_Site
+# HOST-SUFFIX,hdstreet.club,PT_Site
+# HOST-SUFFIX,hdtime.org,PT_Site
+# HOST-SUFFIX,hdupt.com,PT_Site
+# HOST-SUFFIX,hdzone.me,PT_Site
+# HOST-SUFFIX,hhanclub.top,PT_Site
+# HOST-SUFFIX,hitpt.com,PT_Site
+# HOST-SUFFIX,hitpt.org,PT_Site
+# HOST-SUFFIX,hudbt.hust.edu.cn,PT_Site
+# HOST-SUFFIX,icetorrent.org,PT_Site
+# HOST-SUFFIX,iptorrents.com,PT_Site
+# HOST-SUFFIX,j99.info,PT_Site
+# HOST-SUFFIX,joyhd.net,PT_Site
+# HOST-SUFFIX,jpopsuki.eu,PT_Site
+# HOST-SUFFIX,karagarga.in,PT_Site
+# HOST-SUFFIX,keepfrds.com,PT_Site
+# HOST-SUFFIX,landof.tv,PT_Site
+HOST-SUFFIX,leaguehd.com,PT_Site
+HOST-SUFFIX,lemonhd.org,PT_Site
+# HOST-SUFFIX,lztr.me,PT_Site
+HOST-SUFFIX,m-team.cc,PT_Site
+# HOST-SUFFIX,madsrevolution.net,PT_Site
+HOST-SUFFIX,moecat.best,PT_Site
+# HOST-SUFFIX,morethan.tv,PT_Site
+# HOST-SUFFIX,msg.vg,PT_Site
+# HOST-SUFFIX,myanonamouse.net,PT_Site
+HOST-SUFFIX,nanyangpt.com,PT_Site
+# HOST-SUFFIX,ncore.cc,PT_Site
+# HOST-SUFFIX,nebulance.io,PT_Site
+HOST-SUFFIX,nicept.net,PT_Site
+# HOST-SUFFIX,npupt.com,PT_Site
+# HOST-SUFFIX,nwsuaf6.edu.cn,PT_Site
+# HOST-SUFFIX,open.cd,PT_Site
+# HOST-SUFFIX,oppaiti.me,PT_Site
+# HOST-SUFFIX,orpheus.network,PT_Site
+HOST-SUFFIX,ourbits.club,PT_Site
+# HOST-SUFFIX,passthepopcorn.me,PT_Site
+# HOST-SUFFIX,pornbits.net,PT_Site
+# HOST-SUFFIX,privatehd.to,PT_Site
+HOST-SUFFIX,pterclub.com,PT_Site
+HOST-SUFFIX,pthome.net,PT_Site
+# HOST-SUFFIX,ptsbao.club,PT_Site
+HOST-SUFFIX,pttime.org,PT_Site
+# HOST-SUFFIX,pussytorrents.org,PT_Site
+# HOST-SUFFIX,redacted.ch,PT_Site
+# HOST-SUFFIX,sdbits.org,PT_Site
+# HOST-SUFFIX,sharkpt.net,PT_Site
+# HOST-SUFFIX,sjtu.edu.cn,PT_Site
+# HOST-SUFFIX,skyey2.com,PT_Site
+# HOST-SUFFIX,soulvoice.club,PT_Site
+# HOST-SUFFIX,springsunday.net,PT_Site
+# HOST-SUFFIX,tju.pt,PT_Site
+# HOST-SUFFIX,tjupt.org,PT_Site
+# HOST-SUFFIX,torrentday.com,PT_Site
+# HOST-SUFFIX,torrentleech.org,PT_Site
+# HOST-SUFFIX,torrentseeds.org,PT_Site
+# HOST-SUFFIX,totheglory.im,PT_Site
+# HOST-SUFFIX,trontv.com,PT_Site
+# HOST-SUFFIX,u2.dmhy.org,PT_Site
+# HOST-SUFFIX,ubits.club,PT_Site
+# HOST-SUFFIX,uhdbits.org,PT_Site
+HOST-SUFFIX,ultrahd.net,PT_Site
+# HOST-SUFFIX,xauat6.edu.cn,PT_Site

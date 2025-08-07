@@ -1,0 +1,14 @@
+version: "3"
+services:
+  v2ray:
+    image: teddysun/v2ray
+    container_name: my-v2ray
+    environment:
+      - TZ=Asia/Shanghai
+        #cap_add:
+        #- NET_ADMIN
+    #default port 9000, use modified 12345
+    network_mode: host
+    restart: always
+    volumes:
+      - /etc/v2ray:/etc/v2ray

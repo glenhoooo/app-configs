@@ -1,0 +1,39 @@
+# wget https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/geoip-only-cn-private.dat
+# wget https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
+server_addr: ":53"
+cache_size: 2000
+lazy_cache_ttl: 0
+lazy_cache_reply_ttl: 30
+redis_cache: ""
+min_ttl: 0
+max_ttl: 0
+hosts:
+  - "hosts.txt"
+arbitrary: []
+blacklist_domain: []
+insecure: false
+ca: []
+debug: false
+log_file: "log_mosdns.log"
+upstream:
+local_upstream:
+  - 223.5.5.5
+  - 119.29.29.29
+  - 2400:3200::1  # alidns ipv6
+local_ip:
+  - "geoip-only-cn-private.dat:cn"
+local_domain:
+  - "geosite.dat:cn"
+local_latency: 50
+remote_upstream:
+  - udpme://8.8.8.8
+  - udpme://1.1.1.1
+  - tls://1.1.1.1:853
+  - https://dns.cloudflare.com/dns-query
+  - tls://dot-jp.blahdns.com:443
+  - https://doh-jp.blahdns.com/dns-query
+  - https://dns.alidns.com/dns-query
+remote_domain:
+  - "geosite.dat:geolocation-!cn"
+working_dir: ""
+cd2exe: false

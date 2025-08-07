@@ -1,0 +1,23 @@
+payload:
+  # > Spotify
+  # https://gitlab.com/lhie1/Rules/-/blob/master/Clash/Provider/Media/Spotify.yaml
+  # https://github.com/GeQ1an/Rules/blob/master/Clash/Clash.yaml
+  - PROCESS-NAME,com.spotify.music
+
+  - DOMAIN-SUFFIX,pscdn.co
+  - DOMAIN-SUFFIX,scdn.co
+  - DOMAIN-SUFFIX,spoti.fi
+  - DOMAIN-SUFFIX,spotify.com
+  - DOMAIN-SUFFIX,spotifycdn.com
+  - DOMAIN-SUFFIX,spotifycdn.net
+  - DOMAIN-SUFFIX,spotifycharts.com
+  - DOMAIN-SUFFIX,spotifycodes.com
+  - DOMAIN-SUFFIX,spotifyjobs.com
+  - DOMAIN-SUFFIX,spotifynewsroom.jp
+  - DOMAIN-SUFFIX,spotilocal.com
+  - DOMAIN-SUFFIX,tospotify.com
+  # openAI proxy to US country
+  - DOMAIN-SUFFIX,openai.com,NETFLIX
+  - DOMAIN-SUFFIX,auth0.com,NETFLIX
+  - DOMAIN-SUFFIX,deepl.com,NETFLIX
+  - DOMAIN-SUFFIX,sentry.io,NETFLIX

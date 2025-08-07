@@ -1,0 +1,39 @@
+payload:
+  # Proxy with my-build
+  - DOMAIN-KEYWORD,m-team
+  - DOMAIN-SUFFIX,ourbits.club
+  - DOMAIN-SUFFIX,hdhome.org
+  - DOMAIN-SUFFIX,pthome.net
+  - DOMAIN-SUFFIX,beitai.pt
+  - DOMAIN-SUFFIX,btschool.club
+  - DOMAIN-SUFFIX,nanyangpt.com
+  - DOMAIN-SUFFIX,leaguehd.com
+  - DOMAIN-SUFFIX,pterclub.com
+  - DOMAIN-SUFFIX,hdatmos.club
+  # PT end
+  # gitlab
+  - DOMAIN-SUFFIX,gitlab-assets.oss-cn-hongkong.aliyuncs.com
+  - DOMAIN-SUFFIX,gitlab-static.net
+  - DOMAIN-SUFFIX,gitlab.com
+  - DOMAIN-SUFFIX,gitlab.net
+  # custom
+  - DOMAIN-KEYWORD,github
+  - DOMAIN-KEYWORD,xun-niu
+  - DOMAIN-KEYWORD,microsoft
+  - DOMAIN-KEYWORD,bing
+  - DOMAIN-SUFFIX,cloudflare.com
+  - DOMAIN-SUFFIX,docker.com
+  - DOMAIN-SUFFIX,bitbucket.org
+  - DOMAIN-SUFFIX,live.com
+  - DOMAIN-SUFFIX,office.com
+  - DOMAIN-SUFFIX,office.net
+  - DOMAIN-SUFFIX,msn.com
+  - DOMAIN-SUFFIX,outlook.com
+  - DOMAIN-SUFFIX,yandex.com
+  - DOMAIN-SUFFIX,netlify.app
+  - DOMAIN-SUFFIX,hostloc.com
+  - DOMAIN-SUFFIX,notion.so
+  - DOMAIN-SUFFIX,amazonaws.com
+  - DOMAIN-SUFFIX,travis-ci.com
+  - DOMAIN-SUFFIX,jsdelivr.net
+  - DOMAIN-SUFFIX,translate.googleapis.com

@@ -1,0 +1,28 @@
+DOMAIN-SUFFIX,hinpc.com
+DOMAIN,123.199100.xyz
+DOMAIN-SUFFIX,hgl2.com
+DOMAIN-SUFFIX,mb3admin.com
+DOMAIN-SUFFIX,api.cloudflare.com
+DOMAIN-SUFFIX,arco.design,no-resolve
+DOMAIN-SUFFIX,cisdi.com.cn,no-resolve
+DOMAIN-SUFFIX,cisdigital.cn,no-resolve
+DOMAIN-SUFFIX,china-yongfeng.com,no-resolve
+DOMAIN-SUFFIX,deepseek.com
+DOMAIN-SUFFIX,hf-mirror.com
+DOMAIN-SUFFIX,hf-mirror.com
+DOMAIN-SUFFIX,supercopilot.top
+
+# PT
+DOMAIN-SUFFIX,ubits.club
+
+# Check IP
+DOMAIN-SUFFIX,checkip.amazonaws.com
+DOMAIN-SUFFIX,myexternalip.com
+
+# Lan
+DOMAIN,alist.cc
+DOMAIN,dav.cc
+
+IP-CIDR,10.73.0.0/16,no-resolve
+IP-CIDR,10.77.0.0/16,no-resolve
+IP-CIDR,5.5.5.0/24,no-resolve

@@ -1,0 +1,31 @@
+# 大陆香港澳门以外的节点如 AI Gitlab 使用 OpenAi 专用分组
+# https://gist.github.com/YiniRuohong/c0c0ca21618631900f8c363d8663dfba
+DOMAIN-SUFFIX,gitlab.com
+DOMAIN-SUFFIX,bitbucket.com
+DOMAIN-SUFFIX,groq.com
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,claude
+DOMAIN-KEYWORD,cursor
+DOMAIN-SUFFIX,msxiaobing.com
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,bing123.com
+DOMAIN-SUFFIX,bing135.com
+DOMAIN-SUFFIX,bing4.com
+DOMAIN-SUFFIX,bing.com.bo
+DOMAIN-SUFFIX,bing.com.co
+DOMAIN-SUFFIX,bing.com.cy
+DOMAIN-SUFFIX,bing.com.gt
+DOMAIN-SUFFIX,bing.jp
+DOMAIN-SUFFIX,bing.cn
+DOMAIN-SUFFIX,bing.net
+DOMAIN-SUFFIX,bingapis.com
+DOMAIN-SUFFIX,bingforbusiness.com
+DOMAIN-SUFFIX,diabrowser.engineering
+DOMAIN-SUFFIX,diabrowser.com
+DOMAIN-SUFFIX,infini.money

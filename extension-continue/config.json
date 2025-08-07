@@ -1,0 +1,75 @@
+{
+  "models": [
+    {
+      "model": "claude-3-5-sonnet-latest",
+      "provider": "anthropic",
+      "apiKey": "",
+      "title": "Claude 3.5 Sonnet"
+    },
+    {
+      "title": "Qwen 2.5 Coder 32b",
+      "model": "qwen2.5-coder-32b-instruct",
+      "contextLength": 32000,
+      "apiKey": "阿里云百炼 key",
+      "apiBase": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "systemMessage": "reply with 中文",
+      "provider": "openai"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Qwen 2.5 Coder 7b",
+    // https://docs.continue.dev/autocomplete/model-setup#local-offline--self-hosted-experience
+    "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "apiKey": "siliconflow key",
+    "apiBase": "https://api.siliconflow.cn/v1",
+    "provider": "siliconflow"
+  },
+  "tabAutocompleteOptions": {
+    // https://docs.continue.dev/customize/deep-dives/autocomplete#tabautocompleteoptions
+    "disableInFiles": ["*.md"]
+  },
+  "contextProviders": [
+    {
+      "name": "code",
+      "params": {}
+    },
+    {
+      "name": "docs",
+      "params": {}
+    },
+    {
+      "name": "diff",
+      "params": {}
+    },
+    {
+      "name": "terminal",
+      "params": {}
+    },
+    {
+      "name": "problems",
+      "params": {}
+    },
+    {
+      "name": "folder",
+      "params": {}
+    },
+    {
+      "name": "codebase",
+      "params": {}
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "share",
+      "description": "Export the current chat session to markdown"
+    },
+    {
+      "name": "cmd",
+      "description": "Generate a shell command"
+    },
+    {
+      "name": "commit",
+      "description": "Generate a git commit message"
+    }
+  ]
+}
