@@ -247,6 +247,10 @@ tunnels:
     address: 127.0.0.1:37773
     target: tunnel-node-us.199100.xyz:22345
     proxy: 用于中转
+  - network: [tcp, udp]
+    address: 127.0.0.1:37774
+    target: tunnel-node-eu.199100.xyz:22345
+    proxy: 用于中转
 
 # 系统代理跳过列表 cfw-bypass
 # System proxy will ignore these domains(or ipnet)
