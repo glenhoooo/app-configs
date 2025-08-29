@@ -29,3 +29,31 @@ DOMAIN-SUFFIX,bingforbusiness.com
 DOMAIN-SUFFIX,diabrowser.engineering
 DOMAIN-SUFFIX,diabrowser.com
 DOMAIN-SUFFIX,infini.money
+# https://github.com/SkywalkerJi/Clash-Rules/blob/master/AI/Cursor.yaml
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursor-cdn.com
+DOMAIN-SUFFIX,cursorapi.com
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,workos.com
+# https://github.com/SkywalkerJi/Clash-Rules/blob/master/AI/Trae.yaml
+DOMAIN-SUFFIX,trae.ai
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,trae-api-sg.mchost.guru
+DOMAIN-SUFFIX,lf3-static.bytednsdoc.com
+DOMAIN-SUFFIX,bytegate-sg.byteintlapi.com
+DOMAIN-SUFFIX,abtestvm-sg.bytedance.com
+DOMAIN-SUFFIX,tron-sg.bytelemon.com
+DOMAIN-SUFFIX,sf16-short-sg.bytedapm.com
+DOMAIN-SUFFIX,trae.com.cn
+DOMAIN-SUFFIX,tron.jiyunhudong.com
+DOMAIN-SUFFIX,starling.zijieapi.com
+# https://github.com/SkywalkerJi/Clash-Rules/blob/master/AI/AugmentCode.yaml
+DOMAIN-SUFFIX,augmentcode.com
+# https://github.com/SkywalkerJi/Clash-Rules/blob/master/AI/Anthropic.yaml
+DOMAIN,cdn.usefathom.com
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claudeusercontent.com
+# https://github.com/SkywalkerJi/Clash-Rules/blob/master/AI/Windsurf.yaml
+DOMAIN-SUFFIX,windsurf.com
+DOMAIN-SUFFIX,codeium.com
