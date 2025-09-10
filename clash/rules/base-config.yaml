@@ -83,6 +83,7 @@ dns:
     - "*.gitee.com"
     - "*.cisdigital.cn"
     - "*.cisdi.com.cn"
+    - "*.qingtui.com"
     - "*.juejin.cn"
     - "*.199100.xyz"
     - "*.hinpc.com"
@@ -265,6 +266,7 @@ cfw-bypass:
   # MyList
   - "*.chaipip.com"
   - "*.cisdi.com.cn"
+  - "*.qingtui.com"
   - "123.199100.xyz"
   # CN域名直连(中国|公司|网络)
   - "*.cn"
